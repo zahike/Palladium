@@ -1,0 +1,12 @@
+reset
+xc xt0
+xc zt1
+sn test
+run 1ps
+xc on -tbrun
+#force top.dut.reset  'b1
+force dut.reset  'b1
+run 100ns
+#force top.dut.reset  'b0
+force dut.reset  'b0
+run 500ns

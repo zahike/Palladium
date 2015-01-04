@@ -1,0 +1,33 @@
+#!/bin/tcsh -f
+
+umask 0 #make sure all created files have universal read and write permisiions
+limit stacksize 1048570
+setenv ORGDIR /misc/veri3/potato/Palladium_test_environment_/PD_WriteRead_test
+setenv PDCONDOR /emulation/condor/pd_sa_trial_14_dec_10
+setenv PROJECT condor
+setenv REV sa_43_4
+setenv SN_REV 14.10.002
+setenv NC_REV 14.10.002
+#setenv SN_REV 13.20.010
+#setenv NC_REV 13.20.010
+setenv LM_LICENSE_FILE 
+setenv INCA_64BIT 
+setenv CDS_AUTO_64BIT ALL
+setenv IRUN_COMPILATION_PATH ${ORGDIR}/compile_64
+setenv UXE_HOME /usr/cad/cadence/UXE/UXE141_p67/
+
+setenv SPECMAN_TEMP_DIR /local/tmp/specman
+setenv VCS_HOME /usr/cad/synopsys/vcs/release
+setenv SPECMAN_HOME /usr/cad/cadence/incisive/${SN_REV}/specman
+set path = ($UXE_HOME/tools/bin /usr/cad/cadence/incisive/${SN_REV}/bin /usr/cad/cadence/incisive/${SN_REV}/tools.lnx86/bin /usr/cad/cadence/incisive/${SN_REV}/components/sn/linux64 /usr/cad/cadence/incisive/${SN_REV}/components/sn/bin /usr/bin /usr/cad/synopsys/vcs/release/bin $path)
+setenv SNAPSHOT_PATH ${ORGDIR}
+setenv SPECMAN_PATH ${ORGDIR}:${ORGDIR}:/misc/veri3/potato/patch:${ORGDIR}/rbv.cache_e/e_out:${ORGDIR}/rbv.cache/e_out:/misc/veri3/potato/env:/misc/veri3/potato/c:/misc/veri3/potato/rbv:${ORGDIR}/rbv.cache/out:${ORGDIR}/c_out_64:/verification/condor/${REV}/patch:/verification/condor/${REV}/directed_test:/verification/condor/${REV}/linux/rbv.cache_e/e_out:/verification/condor/${REV}/linux/rbv.cache/e_out:/verification/condor/${REV}/env:/verification/condor/${REV}/c:/verification/condor/${REV}/rbv:/verification/condor/${REV}/linux/rbv.cache/out:/verification/condor/${REV}/linux/c_out_64:/verification/condor/${REV}/verilog
+setenv LD_LIBRARY_PATH /usr/local/lib64
+
+setenv NO_PLATFORM_REL_CHECK 1
+
+set specmanGetLic = ( `getFeature -e specman` )
+set specmanLic        = `echo $specmanGetLic | awk '{print $1}'`
+set specmanLicRelease = `echo $specmanGetLic | awk '{print $2}'`
+setenv LM_LICENSE_FILE 7525@mtl007:27010@mtlxls02
+
