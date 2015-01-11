@@ -2,7 +2,7 @@
 date
 cp ../scripts/compile/* .
 echo MELLANOX_STAGE I Yaron environment vlan  
-vlan -sv -f compile_inputs.tcl +rtlCommentPragma +tran_relax
+vlan -sv -f compile_inputs.tcl +rtlCommentPragma +tran_relax -l Vlan_comp.log
 if($?) then 
 	echo Error on Vlan
 	exit 1
