@@ -1,0 +1,40 @@
+
+#### Emulation Options ####
+#emulatorConfiguration  -add {host mtlxemu03} {boards 0+1.0+1.1+1.2+1.3+1.4+1.5+1.6+1.7}
+emulatorConfiguration  -add {host mtlxemu01} {boards 0+2.0+2.1+2.2+2.3+2.4+2.5+2.6+2.7}
+#emulatorConfiguration  -add {host mtlxemu01} {boards 2.0+2.1+2.2+2.3+2.4+2.5+2.6+2.7}
+#emulatorConfiguration  -add {host mtlxemu01} {boards 0}
+#emulatorconfiguration  -add {host mtlxemu03} {boards 0.13+0.14+0.15}
+#symmetricConfiguration -add {host mtlxemu03} {boards 0+1+2+3+4+5+6+7}
+#symmetricConfiguration -add {host mtlxcad01} {boards 0+1}
+
+keepNet -add top.dut.condor.mcore.score.yu.lb2yu_arraysig
+keepNet -add top.dut.condor.gpio
+#shadowsData -add {top.dut.gpio[0] none}
+keepNet -add top.dut.funcmode
+keepNet -add top.PguArrayLoad
+keepNet -add top.dut.condor.mcore.score.yu.yu_boot.yu_boot_record.g_ff_dw2.ps_pack
+keepNet -add top.dut.condor.mcore.score.yu.yu_fuse.yu_arraysig_pre_shift
+keepNet -add top.dut.condor.mcore.vcore.lbv2yu_arraysig
+keepNet -add top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.start
+keepNet -add top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.conf_size_reg
+keepNet -add top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.pgu_tx_pkt_handler.max_pkt_num
+keepNet -add top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.pgu_tx_pkt_handler.pkt_array_rdy
+keepNet -add top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.burst_size
+keepNet -add top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.gap_size
+keepNet -add top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.stop_after_burst
+keepNet -add top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.go
+keepNet -add top.dut.rst_
+keepNet -add top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.done
+keepNet -add top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.res_vld
+keepNet -add top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr_res_vld
+keepNet -add top.dut.condor.mcore.score.yu_reset
+keepNet -add top.dut.condor.mcore.cport0.plu.plu2lnd_p0s0_phy_linkup
+keepNet -add top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_i2c2cr_enable
+
+cableConnection -add {DATA_CABLE_3.HDDC 0_J9}
+#cableConnection -add {DATA_CABLE_3.HDDC 2_J9}
+terminalAssign -add {DATA_CABLE_3 C23 top.dut.i2c_data}
+terminalAssign -add {DATA_CABLE_3 D23 top.dut.i2c_clk}
+
+compilerOption -add {enableMultiSampledIO 1}

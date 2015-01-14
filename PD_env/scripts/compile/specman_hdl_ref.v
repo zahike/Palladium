@@ -1,0 +1,48 @@
+
+module specman_hdl_ref;
+initial
+begin
+     $export_deposit(top.dut.funcmode);
+     $export_deposit(top.dut.condor.mcore.score.yu.yu_boot.yu_boot_record.g_ff_dw2.ps_pack);
+     $export_deposit(top.dut.condor.mcore.score.yu.yu_fuse.yu_arraysig_pre_shift);
+//     $export_deposit(top.dut.condor.mcore.vcore.lbv2yu_arraysig);
+     $export_deposit(top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.start);
+     $export_deposit(top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.conf_size_reg);
+     $export_deposit(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.pgu_tx_pkt_handler.max_pkt_num);
+     $export_deposit(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.pgu_tx_pkt_handler.pkt_array_rdy);   
+     $export_deposit(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.burst_size);
+     $export_deposit(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.gap_size);
+     $export_deposit(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.stop_after_burst);
+     $export_deposit(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.go);
+     $export_read(top.dut.funcmode);
+     $export_read(top.dut.condor.mcore.score.yu.yu_boot.yu_boot_record.g_ff_dw2.ps_pack);
+     $export_read(top.dut.condor.mcore.score.yu.yu_fuse.yu_arraysig_pre_shift);
+     $export_read(top.dut.condor.mcore.vcore.lbv2yu_arraysig);
+     $export_read(top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.start);
+     $export_read(top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.conf_size_reg);
+     $export_read(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.pgu_tx_pkt_handler.max_pkt_num);
+     $export_read(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.pgu_tx_pkt_handler.pkt_array_rdy);   
+     $export_read(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.burst_size);
+     $export_read(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.gap_size);
+     $export_read(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.stop_after_burst);
+     $export_read(top.dut.lndremote.pgu.pgu_tx_port_p0.pgu_tx_s0.go);
+     $export_read(top.dut.rst_);
+     $export_read(top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.done);
+     $export_event(top.dut.condor.mcore.score.yu.yu_ser_port0.yu_ser_slave.pd_mem2cr.done);
+     $export_read(top.dut.condor.mcore.score.yu_reset);   
+     $export_event(top.dut.condor.mcore.score.yu_reset);   
+     $export_read(top.dut.condor.mcore.cport0.plu.plu2lnd_p0s0_phy_linkup);
+     $export_deposit(top.dut.reset_stat_value);
+     $export_deposit(top.dut.init_stat_value);
+     $export_deposit(top.dut.run_stat_value);
+     $export_event(top.dut.rst_);
+     $export_event(top.dut.idel_stat_event);
+     $export_read(top.dut.idel_stat_event);
+     $export_event(top.dut.reset_stat_event);
+     $export_read(top.dut.reset_stat_event);
+     $export_event(top.dut.init_stat_event);
+     $export_read(top.dut.init_stat_event);
+     $export_event(top.dut.run_stat_event);
+     $export_read(top.dut.run_stat_event);
+end
+endmodule

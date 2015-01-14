@@ -1,0 +1,15 @@
+reset
+xc xt0
+xc zt1
+sn test
+#sn trace esi
+run 1ps
+xc on -tbrun
+force top.dut.funcmode 'b1
+force top.dut.condor.mcore.score.yu.lb2yu_arraysig 'b1
+#sdl -expression {top.dut.condor.mcore.score.yu_reset == 1'bn}
+#xeset triggerPos 10
+force top.dut.rst_  'b0
+run 100ns
+force top.dut.rst_  'b1
+run 1950000ns
